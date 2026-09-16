@@ -35,16 +35,30 @@ from bs4 import BeautifulSoup, NavigableString
 from markdown_it import MarkdownIt
 
 SKILL_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-THEMES_PATH = os.path.join(SKILL_DIR, "assets", "themes.json")
+THEMES_DIR = os.path.join(SKILL_DIR, "assets", "themes")
 
+# 经典 / 潮流 / 更多风格 的固定展示顺序
+_THEME_ORDER = [
+    "apple", "claude", "wechat", "media", "medium", "stripe", "workspace",
+    "linear", "retro", "bloomberg",
+    "notion", "github", "sspai", "dracula", "nord", "sakura", "ocean",
+    "mint", "sunset", "monokai",
+    "solarized", "cyberpunk", "ink", "lavender", "forest", "glacier",
+    "coffee", "bauhaus", "copper", "pastel",
+]
 
 # ---------------------------------------------------------------------------
 # 主题加载
 # ---------------------------------------------------------------------------
 def load_themes():
-    with open(THEMES_PATH, encoding="utf-8") as f:
-        return json.load(f)
-
+    themes = []
+    for name in sorted(os.listdir(THEMES_DIR)):
+        if name.endswith(".json"):
+            with open(os.path.join(THEMES_DIR, name), encoding="utf-8") as f:
+                themes.append(json.load(f))
+    order = {tid: i for i, tid in enumerate(_THEME_ORDER)}
+    themes.sort(key=lambda t: order.get(t["id"], 999))
+    return themes
 
 THEMES = load_themes()
 THEME_BY_ID = {t["id"]: t for t in THEMES}
@@ -79,7 +93,7 @@ def preprocess(md):
     md = re.sub(r"\*{4,}", "", md)
     # 粗体后紧跟标点：插入零宽空格，避免微信端换行把标点甩到下一行
     md = re.sub(
-        r"([^\s])\*\*([+\-＋－%％~～!！?？,，.。:：;；、\\/|@#￥$^&*_=（）()【】\[\]《》〈〉「」『』“”\"'\u0060…·][^\n*]*?)\*\*",
+        r"([^\s])\*\*([+\-＋－%％~～!！?？,，.。:：;；、\\/|@#￥$^&*_=（）()【】\[\]《》〈〉「」『』“\"'\u0060…·][^\n*]*?)\*\*",
         lambda m: m.group(1) + "**" + "\u200b" + m.group(2) + "**",
         md,
     )
