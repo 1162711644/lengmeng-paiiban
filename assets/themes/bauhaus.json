@@ -1,0 +1,29 @@
+{
+ "id": "bauhaus",
+ "name": "Bauhaus",
+ "description": "包豪斯三原色风格，红蓝黄碰撞的现代主义先锋",
+ "styles": {
+  "container": "max-width: 100%; margin: 0 auto; padding: 24px 20px 48px 20px; font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.65 !important; color: #1a1a1a !important; background-color: #ffffff !important; word-wrap: break-word;",
+  "h1": "font-size: 34px; font-weight: 900; color: #e30613 !important; line-height: 1.2 !important; margin: 38px 0 16px; letter-spacing: -0.02em; text-transform: uppercase;",
+  "h2": "font-size: 26px; font-weight: 700; color: #004d9f !important; line-height: 1.35 !important; margin: 32px 0 16px;",
+  "h3": "font-size: 21px; font-weight: 600; color: #1a1a1a !important; line-height: 1.4 !important; margin: 28px 0 14px;",
+  "h4": "font-size: 18px; font-weight: 600; color: #1a1a1a !important; line-height: 1.4 !important; margin: 24px 0 12px;",
+  "p": "margin: 18px 0 !important; line-height: 1.65 !important; color: #1a1a1a !important;",
+  "strong": "font-weight: 900; color: #e30613 !important;",
+  "em": "font-style: italic; color: #555 !important;",
+  "a": "color: #004d9f !important; text-decoration: none; border-bottom: 2px solid #f5a623; padding-bottom: 1px;",
+  "ul": "margin: 16px 0; padding-left: 28px;",
+  "ol": "margin: 16px 0; padding-left: 28px;",
+  "li": "margin: 8px 0; line-height: 1.65 !important; color: #1a1a1a !important;",
+  "blockquote": "margin: 24px 0; padding: 16px 20px; background-color: #fff4d6 !important; border-left: 6px solid #f5a623; color: #333 !important; border-radius: 0;",
+  "code": "font-family: \"SF Mono\", Consolas, monospace; padding: 3px 6px; background-color: #f0f0f0 !important; color: #004d9f !important; border-radius: 0; font-size: 13px !important; line-height: 1.5 !important;",
+  "pre": "margin: 24px 0; padding: 20px; background-color: #f0f0f0 !important; border-radius: 0; overflow-x: auto; font-size: 13px !important; line-height: 1.5 !important; border-left: 6px solid #e30613;",
+  "hr": "margin: 36px auto; border: none; height: 3px; background-color: #1a1a1a !important; width: 100%;",
+  "img": "max-width: 100%; height: auto; display: block; margin: 24px auto; border-radius: 0;",
+  "table": "width: 100%; margin: 24px 0; border-collapse: collapse; font-size: 15px;",
+  "th": "background-color: #004d9f !important; padding: 16px 16px; text-align: left; font-weight: 700; color: #ffffff !important; border: 3px solid #1a1a1a;",
+  "td": "padding: 16px 16px; border: 3px solid #1a1a1a; color: #1a1a1a !important; font-weight: 500;",
+  "tr": "border: none;"
+ },
+ "category": "更多风格"
+}
