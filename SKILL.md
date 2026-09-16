@@ -23,7 +23,7 @@ description: 冷檬排版 —— 复刻自 markdown.gmlart.cn（WeChat-Markdown 
 
 ### 第 2 步：列出排版风格供选择
 
-- 读取 `assets/themes.json`（30 款，含 id / name / description / category / styles）
+- 读取 `assets/themes/` 目录下的 30 个独立 JSON（每个含 id / name / description / category / styles）
 - 按「经典 / 潮流 / 更多风格」三段列出：名称 + 一句话描述 + 适合内容建议，请用户选择一款
 - 用户未指定 → 默认推荐「Mac」；用户说"随便 / 你定" → 按文章主题推荐一款并说明理由
 - 用户直接点名（如"用 Linear"或"水墨"）→ 跳过列表示，直接进入渲染
@@ -55,10 +55,10 @@ python3 scripts/render.py --md <文章.md> --theme <风格id或名称> --title "
 - **图片**：优先转 base64 内嵌；远程图片尽力抓取，失败保留 URL 并提示用户
 - **代码块**：保留原站 Mac 红绿灯控制台样式 + GitHub 浅色语法配色
 - 渲染脚本依赖 Python 3 + markdown_it / BeautifulSoup4 / Pygments（环境已装）；如缺失先 `pip install markdown-it-py beautifulsoup4 pygments linkify-it-py`
-- 全量 30 款风格定义以 `assets/themes.json` 为唯一权威来源，不要手写 CSS 覆盖；需要改样式先改 JSON
+- 全量 30 款风格定义以 `assets/themes/*.json` 为唯一权威来源，不要手写 CSS 覆盖；需要改样式先改对应 JSON
 
 ## 资源
 
 - `scripts/render.py` —— 渲染引擎（CLI：--md / --theme / --title / --out / --list）
-- `assets/themes.json` —— 30 款风格的完整定义（内联 CSS）
+- `assets/themes/*.json` —— 30 款风格的完整定义（每款一个独立 JSON，内联 CSS）
 - `references/themes.md` —— 风格目录速查表（列风格时参考）
